@@ -13,7 +13,7 @@ public abstract class DeleteUniqueRequest <R extends BaseResponse, S extends Sel
 	private String entity;
 	private long id;
 	
-	public DeleteUniqueRequest(String entity, long id, Class<? extends R> responseClass) {
+	public DeleteUniqueRequest(String entity, long id, Class<R> responseClass) {
 		super(responseClass);
 		this.entity = entity;
 		this.id = id;

@@ -1,13 +1,12 @@
 package com.zeus.api.sellf;
 
-import java.lang.reflect.Type;
 import java.util.Map;
 
 public abstract class BaseRequest<R extends BaseResponse> {
 
-	private final Class<? extends R> responseClass;
+	private final Class<R> responseClass;
 	
-	public BaseRequest(Class<? extends R> responseClass) {
+	public BaseRequest(Class<R> responseClass) {
         this.responseClass = responseClass;
 	}
 	
@@ -15,7 +14,7 @@ public abstract class BaseRequest<R extends BaseResponse> {
 	
 	public abstract Map<String, Object> params();
 	
-	public Type getResponseType() {
+	public Class<R> getResponseType() {
         return responseClass;
 	}
 }

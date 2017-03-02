@@ -32,7 +32,6 @@ import com.zeus.api.sellf.request.method.Get;
 import com.zeus.api.sellf.request.method.Post;
 import com.zeus.api.sellf.request.method.Put;
 import com.zeus.api.sellf.response.GetUniqueResponse;
-import com.zeus.api.sellf.response.GetUserResponse;
 
 public class SellfApi {
 
@@ -77,8 +76,8 @@ public class SellfApi {
 							)
 						);
 						
-						if(GetUniqueResponse.class.isAssignableFrom(Class.forName(request.getResponseType().getTypeName()))) {
-							R ret = (R)Class.forName(request.getResponseType().getTypeName()).newInstance();
+						if(GetUniqueResponse.class.isAssignableFrom(request.getResponseType())) {
+							R ret = request.getResponseType().newInstance();
 							getSetDataMethod().invoke(ret, gson.fromJson(reader, ((GetUniqueResponse)ret).getType()));
 							return ret;
 						}
@@ -129,8 +128,8 @@ public class SellfApi {
 							)
 						);
 						
-						if(GetUniqueResponse.class.isAssignableFrom(Class.forName(request.getResponseType().getTypeName()))) {
-							R ret = (R)Class.forName(request.getResponseType().getTypeName()).newInstance();
+						if(GetUniqueResponse.class.isAssignableFrom(request.getResponseType())) {
+							R ret = request.getResponseType().newInstance();
 							getSetDataMethod().invoke(ret, gson.fromJson(reader, ((GetUniqueResponse)ret).getType()));
 							return ret;
 						}
@@ -166,8 +165,8 @@ public class SellfApi {
 							)
 						);
 						
-						if(GetUniqueResponse.class.isAssignableFrom(Class.forName(request.getResponseType().getTypeName()))) {
-							R ret = (R)Class.forName(request.getResponseType().getTypeName()).newInstance();
+						if(GetUniqueResponse.class.isAssignableFrom(request.getResponseType())) {
+							R ret = request.getResponseType().newInstance();
 							getSetDataMethod().invoke(ret, gson.fromJson(reader, ((GetUniqueResponse)ret).getType()));
 							return ret;
 						}

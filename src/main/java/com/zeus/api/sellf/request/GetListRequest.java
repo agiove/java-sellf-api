@@ -15,7 +15,7 @@ public abstract class GetListRequest<R extends BaseResponse, S extends SellfMode
 	private int pageNum = -1;
 	private String sortByField = null;
 	
-	public GetListRequest(String entity, Class<? extends R> responseClass) {
+	public GetListRequest(String entity, Class<R> responseClass) {
 		super(responseClass);
 		this.entity = entity;
 	}

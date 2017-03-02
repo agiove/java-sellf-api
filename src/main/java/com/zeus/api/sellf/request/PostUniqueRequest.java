@@ -13,7 +13,7 @@ public abstract class PostUniqueRequest<R extends BaseResponse, S extends SellfM
 	private String entity;
 	private S data;
 	
-	public PostUniqueRequest(String entity, S data, Class<? extends R> responseClass) {
+	public PostUniqueRequest(String entity, S data, Class<R> responseClass) {
 		super(responseClass);
 		this.entity = entity;
 		this.data = data;

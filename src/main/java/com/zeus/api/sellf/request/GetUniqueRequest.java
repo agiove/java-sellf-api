@@ -13,7 +13,7 @@ public abstract class GetUniqueRequest <R extends BaseResponse, S extends SellfM
 	private String entity;
 	private long id;
 	
-	public GetUniqueRequest(String entity, long id, Class<? extends R> responseClass) {
+	public GetUniqueRequest(String entity, long id, Class<R> responseClass) {
 		super(responseClass);
 		this.entity = entity;
 		this.id = id;

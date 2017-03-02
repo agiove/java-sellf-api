@@ -14,7 +14,7 @@ public abstract class PutUniqueRequest<R extends BaseResponse, S extends SellfMo
 	private long id;
 	private S data;
 	
-	public PutUniqueRequest(String entity, long id, S data, Class<? extends R> responseClass) {
+	public PutUniqueRequest(String entity, long id, S data, Class<R> responseClass) {
 		super(responseClass);
 		this.entity = entity;
 		this.id = id;
