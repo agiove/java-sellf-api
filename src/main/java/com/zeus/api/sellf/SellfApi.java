@@ -65,17 +65,17 @@ public class SellfApi {
 					.returnResponse();
 				
 				StatusLine statusLine = response.getStatusLine();
-				if(statusLine.getStatusCode() < 400) {
-					BufferedReader reader = null;
-					try {
-						reader = new BufferedReader(
-							new InputStreamReader(
-								response
-									.getEntity()
-									.getContent()
-							)
-						);
-						
+				BufferedReader reader = null;
+				try {
+					reader = new BufferedReader(
+						new InputStreamReader(
+							response
+								.getEntity()
+								.getContent()
+						)
+					);
+					
+					if(statusLine.getStatusCode() < 400) {
 						if(GetUniqueResponse.class.isAssignableFrom(request.getResponseType())) {
 							R ret = request.getResponseType().newInstance();
 							getSetDataMethod().invoke(ret, gson.fromJson(reader, ((GetUniqueResponse)ret).getType()));
@@ -83,14 +83,15 @@ public class SellfApi {
 						}
 						
 						return gson.fromJson(reader, request.getResponseType());
-					} finally {
-						if(reader!=null) reader.close();
 					}
+					else throw new SellfApiRequestException(
+						statusLine.getStatusCode(), 
+						statusLine.getReasonPhrase(),
+						reader.readLine()
+					);
+				} finally {
+					if(reader!=null) reader.close();
 				}
-				else throw new SellfApiRequestException(
-					statusLine.getStatusCode(), 
-					statusLine.getReasonPhrase()
-				);
 			} else if(request instanceof Delete) {
 				response = Request
 					.Delete(makeUri(request))
@@ -101,10 +102,24 @@ public class SellfApi {
 				
 				StatusLine statusLine = response.getStatusLine();
 				if(statusLine.getStatusCode() != 200) {
-					throw new SellfApiRequestException(
-						statusLine.getStatusCode(), 
-						statusLine.getReasonPhrase()
-					);
+					BufferedReader reader = null;
+					try {
+						reader = new BufferedReader(
+								new InputStreamReader(
+									response
+										.getEntity()
+										.getContent()
+								)
+							);
+						
+						throw new SellfApiRequestException(
+							statusLine.getStatusCode(), 
+							statusLine.getReasonPhrase(),
+							reader.readLine()
+						);
+					} finally {
+						if(reader!=null) reader.close();
+					}
 				}
 			} else if(request instanceof Post) {
 				response = Request
@@ -117,17 +132,16 @@ public class SellfApi {
 					.returnResponse();
 				
 				StatusLine statusLine = response.getStatusLine();
-				if(statusLine.getStatusCode() < 400) {
-					BufferedReader reader = null;
-					try {
-						reader = new BufferedReader(
-							new InputStreamReader(
-								response
-									.getEntity()
-									.getContent()
-							)
-						);
-						
+				BufferedReader reader = null;
+				try {
+					reader = new BufferedReader(
+						new InputStreamReader(
+							response
+								.getEntity()
+								.getContent()
+						)
+					);
+					if(statusLine.getStatusCode() < 400) {
 						if(GetUniqueResponse.class.isAssignableFrom(request.getResponseType())) {
 							R ret = request.getResponseType().newInstance();
 							getSetDataMethod().invoke(ret, gson.fromJson(reader, ((GetUniqueResponse)ret).getType()));
@@ -135,14 +149,15 @@ public class SellfApi {
 						}
 						
 						return gson.fromJson(reader, request.getResponseType());
-					} finally {
-						if(reader!=null) reader.close();
 					}
+					else throw new SellfApiRequestException(
+						statusLine.getStatusCode(), 
+						statusLine.getReasonPhrase(),
+						reader.readLine()
+					);
+				} finally {
+					if(reader!=null) reader.close();
 				}
-				else throw new SellfApiRequestException(
-					statusLine.getStatusCode(), 
-					statusLine.getReasonPhrase()
-				);
 			} else if(request instanceof Put) {
 				response = Request
 					.Put(makeUri(request))
@@ -154,17 +169,16 @@ public class SellfApi {
 					.returnResponse();
 				
 				StatusLine statusLine = response.getStatusLine();
-				if(statusLine.getStatusCode() < 400) {
-					BufferedReader reader = null;
-					try {
-						reader = new BufferedReader(
-							new InputStreamReader(
-								response
-									.getEntity()
-									.getContent()
-							)
-						);
-						
+				BufferedReader reader = null;
+				try {
+					reader = new BufferedReader(
+						new InputStreamReader(
+							response
+								.getEntity()
+								.getContent()
+						)
+					);
+					if(statusLine.getStatusCode() < 400) {
 						if(GetUniqueResponse.class.isAssignableFrom(request.getResponseType())) {
 							R ret = request.getResponseType().newInstance();
 							getSetDataMethod().invoke(ret, gson.fromJson(reader, ((GetUniqueResponse)ret).getType()));
@@ -172,14 +186,15 @@ public class SellfApi {
 						}
 						
 						return gson.fromJson(reader, request.getResponseType());
-					} finally {
-						if(reader!=null) reader.close();
 					}
+					else throw new SellfApiRequestException(
+						statusLine.getStatusCode(), 
+						statusLine.getReasonPhrase(),
+						reader.readLine()
+					);
+				} finally {
+					if(reader!=null) reader.close();
 				}
-				else throw new SellfApiRequestException(
-					statusLine.getStatusCode(), 
-					statusLine.getReasonPhrase()
-				);
 			}
 		} catch (Throwable e) {
 			if (e instanceof SellfApiRequestException)
