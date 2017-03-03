@@ -8,7 +8,7 @@ public class Source implements Serializable, SellfModel {
 	private static final long serialVersionUID = -3034805484930242967L;
 
 	/** Unique identifier of the source */
-	private long id;
+	private Long id;
 	
 	/** Name of the source */
 	private String name;
@@ -19,7 +19,7 @@ public class Source implements Serializable, SellfModel {
 	/** Date of last edit */
 	private Date updatedAt;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

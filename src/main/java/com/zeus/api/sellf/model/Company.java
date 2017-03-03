@@ -9,7 +9,7 @@ public class Company implements Serializable, SellfModel {
 	private static final long serialVersionUID = 2600849591371422867L;
 
 	/** Unique identifier of the company */
-	private long id;
+	private Long id;
 	
 	/** Name of the company */
 	private String name;
@@ -36,10 +36,10 @@ public class Company implements Serializable, SellfModel {
 	private String address;
 	
 	/** Geographic coordinate of the company */
-	private float latitude;
+	private Float latitude;
 	
 	/** Geographic coordinate of the company */
-	private float longitude;
+	private Float longitude;
 	
 	/** Description */ 
 	private String description;
@@ -48,7 +48,7 @@ public class Company implements Serializable, SellfModel {
 	private List<String> tags;
 	
 	/** Unique identifier of the user that the company is assigned to */
-	private long userId;
+	private Long userId;
 	
 	/** Date of creation */
 	private Date createdAt;
@@ -120,19 +120,19 @@ public class Company implements Serializable, SellfModel {
 		this.address = address;
 	}
 
-	public float getLatitude() {
+	public Float getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(float latitude) {
+	public void setLatitude(Float latitude) {
 		this.latitude = latitude;
 	}
 
-	public float getLongitude() {
+	public Float getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(float longitude) {
+	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
 	}
 
@@ -152,15 +152,15 @@ public class Company implements Serializable, SellfModel {
 		this.tags = tags;
 	}
 
-	public long getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

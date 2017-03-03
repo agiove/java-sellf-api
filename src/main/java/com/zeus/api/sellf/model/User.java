@@ -8,7 +8,7 @@ public class User implements Serializable, SellfModel {
 	private static final long serialVersionUID = -1960813042767271593L;
 
 	/** Unique identifier of the user */
-	private long id;
+	private Long id;
 	
 	/** Email address of the user */
 	private String email;
@@ -19,7 +19,7 @@ public class User implements Serializable, SellfModel {
 	/** Date of creation */
 	private Date createdAt;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

@@ -9,19 +9,19 @@ public class Deal implements Serializable, SellfModel {
 	private static final long serialVersionUID = 9169499244817156193L;
 
 	/** Unique identifier of the deal */
-	private long id;
+	private Long id;
 	
 	/** Brief description of the deal */
 	private String name;
 	
 	/** Estimated value of the deal, with decimal part if needed */
-	private float value;
+	private Float value;
 	
 	/** To point if the deal is important or not */
-	private boolean isHot;
+	private Boolean isHot;
 	
 	/** Probability of closing the deal successfully */
-	private int winProbability;
+	private Integer winProbability;
 	
 	/** Estimated close date of the deal */
 	private Date estimatedCloseAt;
@@ -36,22 +36,22 @@ public class Deal implements Serializable, SellfModel {
 	private List<String> tags;
 	
 	/** Unique identifier of a primary person */
-	private long personId;
+	private Long personId;
 	
 	/** Unique identifier of a primary company */
-	private long companyId;
+	private Long companyId;
 	
-	/** Unique identifier of the deal’s current stage in the pipeline */
-	private long stageId;
+	/** Unique identifier of the dealï¿½s current stage in the pipeline */
+	private Long stageId;
 	
 	/** Unique identifier of the deal source */
-	private long sourceId;
+	private Long sourceId;
 	
 	/** Unique identifier of the product (i.e. margin) associated to the deal */
-	private long productId;
+	private Long productId;
 	
 	/** Unique identifier of the user that the person is assigned to */
-	private long userId;
+	private Long userId;
 	
 	/** Date of creation */
 	private Date createdAt;
@@ -67,27 +67,27 @@ public class Deal implements Serializable, SellfModel {
 		this.name = name;
 	}
 
-	public float getValue() {
+	public Float getValue() {
 		return value;
 	}
 
-	public void setValue(float value) {
+	public void setValue(Float value) {
 		this.value = value;
 	}
 
-	public boolean isHot() {
+	public Boolean isHot() {
 		return isHot;
 	}
 
-	public void setHot(boolean isHot) {
+	public void setHot(Boolean isHot) {
 		this.isHot = isHot;
 	}
 
-	public int getWinProbability() {
+	public Integer getWinProbability() {
 		return winProbability;
 	}
 
-	public void setWinProbability(int winProbability) {
+	public void setWinProbability(Integer winProbability) {
 		this.winProbability = winProbability;
 	}
 
@@ -107,55 +107,55 @@ public class Deal implements Serializable, SellfModel {
 		this.tags = tags;
 	}
 
-	public long getPersonId() {
+	public Long getPersonId() {
 		return personId;
 	}
 
-	public void setPersonId(long personId) {
+	public void setPersonId(Long personId) {
 		this.personId = personId;
 	}
 
-	public long getCompanyId() {
+	public Long getCompanyId() {
 		return companyId;
 	}
 
-	public void setCompanyId(long companyId) {
+	public void setCompanyId(Long companyId) {
 		this.companyId = companyId;
 	}
 
-	public long getStageId() {
+	public Long getStageId() {
 		return stageId;
 	}
 
-	public void setStageId(long stageId) {
+	public void setStageId(Long stageId) {
 		this.stageId = stageId;
 	}
 
-	public long getSourceId() {
+	public Long getSourceId() {
 		return sourceId;
 	}
 
-	public void setSourceId(long sourceId) {
+	public void setSourceId(Long sourceId) {
 		this.sourceId = sourceId;
 	}
 
-	public long getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(long productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 
-	public long getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

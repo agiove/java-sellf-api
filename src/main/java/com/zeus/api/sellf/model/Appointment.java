@@ -8,7 +8,7 @@ public class Appointment implements Serializable, SellfModel {
 	private static final long serialVersionUID = -6423126057239995723L;
 
 	/** Unique identifier of the appointment */
-	private long id;
+	private Long id;
 	
 	/** Name of the appointment */
 	private String name;
@@ -39,14 +39,14 @@ public class Appointment implements Serializable, SellfModel {
 	/** Place in which the appointment occurs */
 	private String address;
 	
-	/** Appointment’s notes */
+	/** Appointmentï¿½s notes */
 	private String description;
 	
 	/** Unique identifier of the deal concerning the appointment */
-	private long dealId;
+	private Long dealId;
 	
 	/** Unique identifier of the user that the appointment is assigned to */
-	private long userId;
+	private Long userId;
 	
 	/** Date of creation */
 	private Date createdAt;
@@ -118,23 +118,23 @@ public class Appointment implements Serializable, SellfModel {
 		this.description = description;
 	}
 
-	public long getDealId() {
+	public Long getDealId() {
 		return dealId;
 	}
 
-	public void setDealId(long dealId) {
+	public void setDealId(Long dealId) {
 		this.dealId = dealId;
 	}
 
-	public long getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

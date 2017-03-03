@@ -7,7 +7,7 @@ public class Pipeline implements Serializable, SellfModel {
 	private static final long serialVersionUID = 1678684584304252686L;
 
 	/** Unique identifier of the pipeline */
-	private long id;
+	private Long id;
 	
 	/** Name of the pipeline */
 	private String name;
@@ -15,7 +15,7 @@ public class Pipeline implements Serializable, SellfModel {
 	/** Pipeline type (i.e. money, quantity) */
 	private String type;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

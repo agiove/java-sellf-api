@@ -8,7 +8,7 @@ public class Stage implements Serializable, SellfModel {
 	private static final long serialVersionUID = -3819059535895726376L;
 
 	/** Unique identifier of the stage */
-	private long id;
+	private Long id;
 	
 	/** Name of the stage */
 	private String name;
@@ -20,7 +20,7 @@ public class Stage implements Serializable, SellfModel {
 	private int position;
 	
 	/** Unique identifier of the associated pipeline */
-	private long pipelineId;
+	private Long pipelineId;
 	
 	/** Stage type (i.e. active, won, lost, abandoned) */
 	private int type;
@@ -31,7 +31,7 @@ public class Stage implements Serializable, SellfModel {
 	/** Date of last edit */
 	private Date updatedAt;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -47,7 +47,7 @@ public class Stage implements Serializable, SellfModel {
 		return position;
 	}
 
-	public long getPipelineId() {
+	public Long getPipelineId() {
 		return pipelineId;
 	}
 

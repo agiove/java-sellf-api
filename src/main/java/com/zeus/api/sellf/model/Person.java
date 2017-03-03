@@ -9,7 +9,7 @@ public class Person implements Serializable, SellfModel {
 	private static final long serialVersionUID = 65090814767879981L;
 
 	/** Unique identifier of the person */
-	private long id;
+	private Long id;
 	
 	/** First name of the person */
 	private String firstName;
@@ -45,21 +45,21 @@ public class Person implements Serializable, SellfModel {
 	private String address;
 	
 	/** Geographic coordinate of the person */
-	private float latitude; 
+	private Float latitude; 
 	
 	/** Geographic coordinate of the person */
-	private float longitude;
+	private Float longitude;
 	
 	private String description;
 	
 	/** An array of tags for a person */
 	private List<String> tags;
 	
-	/** Unique identifier of the person’s company */
-	private long companyId;
+	/** Unique identifier of the personï¿½s company */
+	private Long companyId;
 	
 	/** Unique identifier of the user that the person is assigned to */
-	private long userId;
+	private Long userId;
 	
 	/** Date of creation */
 	private Date createdAt;
@@ -155,19 +155,19 @@ public class Person implements Serializable, SellfModel {
 		this.address = address;
 	}
 
-	public float getLatitude() {
+	public Float getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(float latitude) {
+	public void setLatitude(Float latitude) {
 		this.latitude = latitude;
 	}
 
-	public float getLongitude() {
+	public Float getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(float longitude) {
+	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
 	}
 
@@ -187,23 +187,23 @@ public class Person implements Serializable, SellfModel {
 		this.tags = tags;
 	}
 
-	public long getCompanyId() {
+	public Long getCompanyId() {
 		return companyId;
 	}
 
-	public void setCompanyId(long companyId) {
+	public void setCompanyId(Long companyId) {
 		this.companyId = companyId;
 	}
 
-	public long getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

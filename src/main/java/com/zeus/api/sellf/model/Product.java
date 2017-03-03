@@ -8,13 +8,13 @@ public class Product implements Serializable, SellfModel {
 	private static final long serialVersionUID = 5223021977783057432L;
 
 	/** Unique identifier of the product */
-	private long id;
+	private Long id;
 	
 	/** Name of the product */
 	private String name;
 	
 	/** A percentage applied to the estimated value of a deal */
-	private int netRate;
+	private Integer netRate;
 	
 	/** Date of creation */
 	private Date createdAt;
@@ -22,7 +22,7 @@ public class Product implements Serializable, SellfModel {
 	/** Date of last edit */
 	private Date updatedAt;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -30,7 +30,7 @@ public class Product implements Serializable, SellfModel {
 		return name;
 	}
 
-	public int getNetRate() {
+	public Integer getNetRate() {
 		return netRate;
 	}
 
