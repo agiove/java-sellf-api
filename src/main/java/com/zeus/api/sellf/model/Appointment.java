@@ -3,6 +3,8 @@ package com.zeus.api.sellf.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.zeus.api.sellf.annotation.RequiredField;
+
 public class Appointment implements Serializable, SellfModel {
 	
 	private static final long serialVersionUID = -6423126057239995723L;
@@ -11,7 +13,7 @@ public class Appointment implements Serializable, SellfModel {
 	private Long id;
 	
 	/** Name of the appointment */
-	private String name;
+	@RequiredField private String name;
 	
 	/** 
 	 * Type of appointment 
@@ -25,10 +27,10 @@ public class Appointment implements Serializable, SellfModel {
 	private String action;
 	
 	/** Moment in which the appointment starts */
-	private Date startAt;
+	@RequiredField private Date startAt;
 	
 	/** Moment in which the appointment ends */
-	private Date endAt;
+	@RequiredField private Date endAt;
 	
 	/** At what time the user needs to be notified of the upcoming appointment */
 	private Date remindAt;
@@ -46,7 +48,7 @@ public class Appointment implements Serializable, SellfModel {
 	private Long dealId;
 	
 	/** Unique identifier of the user that the appointment is assigned to */
-	private Long userId;
+	@RequiredField private Long userId;
 	
 	/** Date of creation */
 	private Date createdAt;

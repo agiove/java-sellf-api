@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.zeus.api.sellf.annotation.RequiredField;
+
 public class Company implements Serializable, SellfModel {
 
 	private static final long serialVersionUID = 2600849591371422867L;
@@ -12,7 +14,7 @@ public class Company implements Serializable, SellfModel {
 	private Long id;
 	
 	/** Name of the company */
-	private String name;
+	@RequiredField private String name;
 	
 	/** Industry sector of the company */
 	private String industry;
@@ -48,7 +50,7 @@ public class Company implements Serializable, SellfModel {
 	private List<String> tags;
 	
 	/** Unique identifier of the user that the company is assigned to */
-	private Long userId;
+	@RequiredField private Long userId;
 	
 	/** Date of creation */
 	private Date createdAt;

@@ -20,12 +20,12 @@ public abstract class GetListRequest<R extends BaseResponse, S extends SellfMode
 		this.entity = entity;
 	}
 	
-	public GetListRequest page(int pageNum) {
+	public GetListRequest<R, S> page(int pageNum) {
 		this.pageNum = pageNum;
 		return this;
 	}
 	
-	public GetListRequest sortBy(String field, boolean asc) {
+	public GetListRequest<R, S> sortBy(String field, boolean asc) {
 		this.sortByField = (asc ? "" : "-") + field;
 		return this;
 	}

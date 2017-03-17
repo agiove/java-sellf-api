@@ -42,7 +42,7 @@ public class SellfApi {
 	private Gson gson = new GsonBuilder()
 //			.excludeFieldsWithoutExposeAnnotation()
 			.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-			.setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS")
+			.setDateFormat("yyyy-MM-dd'T'HH:mm:ss.S")
 			.create();
 	
 	private SellfApi(String token) {
@@ -255,9 +255,4 @@ public class SellfApi {
 		return retList;
 	}
 	
-	public static void main(String[] args) {
-		for(Method m : GetUniqueResponse.class.getDeclaredMethods()) {
-			System.out.println(m.toGenericString());
-		}
-	}
 }

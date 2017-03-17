@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.zeus.api.sellf.annotation.RequiredField;
+
 public class Person implements Serializable, SellfModel {
 
 	private static final long serialVersionUID = 65090814767879981L;
@@ -12,10 +14,10 @@ public class Person implements Serializable, SellfModel {
 	private Long id;
 	
 	/** First name of the person */
-	private String firstName;
+	@RequiredField private String firstName;
 	
 	/** Last name of the person */
-	private String lastName;
+	@RequiredField private String lastName;
 	
 	/** Role in the company */
 	private String title;
@@ -59,7 +61,7 @@ public class Person implements Serializable, SellfModel {
 	private Long companyId;
 	
 	/** Unique identifier of the user that the person is assigned to */
-	private Long userId;
+	@RequiredField private Long userId;
 	
 	/** Date of creation */
 	private Date createdAt;
