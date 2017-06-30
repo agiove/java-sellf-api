@@ -36,7 +36,7 @@ import com.zeus.api.sellf.response.GetUniqueResponse;
 public class SellfApi {
 
 	public static final String API_URL = "https://api.sellf.io";
-	public static final String API_V1 = "v1";
+	public static final String API_V2 = "v2";
 	
 	private String token;
 	private Gson gson = new GsonBuilder()
@@ -207,7 +207,7 @@ public class SellfApi {
 	}
 	
 	private URI makeUri(BaseRequest request) throws URISyntaxException {
-		URIBuilder uri = new URIBuilder(API_URL + "/" + API_V1 + "/" + request.urlPart());
+		URIBuilder uri = new URIBuilder(API_URL + "/" + API_V2 + "/" + request.urlPart());
 		uri.addParameters(getParams(request));
 		return uri.build();
 	}

@@ -3,6 +3,7 @@ package com.zeus.api.sellf.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.zeus.api.sellf.annotation.RequiredField;
 
@@ -69,6 +70,8 @@ public class Person implements Serializable, SellfModel {
 	/** Date of last edit */
 	private Date updatedAt;
 
+	private Map<String, Object> customFields;
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -216,4 +219,12 @@ public class Person implements Serializable, SellfModel {
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
+	
+	public Map<String, Object> getCustomFields() {
+		return customFields;
+	}
+
+	public void setCustomFields(Map<String, Object> customFields) {
+		this.customFields = customFields;
+	} 
 }

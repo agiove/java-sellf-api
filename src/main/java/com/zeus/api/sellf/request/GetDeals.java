@@ -1,6 +1,8 @@
 package com.zeus.api.sellf.request;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.zeus.api.sellf.model.Deal;
 import com.zeus.api.sellf.response.GetDealsResponse;
@@ -19,6 +21,7 @@ public class GetDeals extends GetListRequest<GetDealsResponse, Deal> {
 	private long companyId = -1;
 	private long sourceId = -1;
 	private long productId = -1;
+	private Map<String, Object> customFields = new HashMap<String, Object>();
 	
 	public GetDeals() {
 		super(entity, GetDealsResponse.class);
@@ -60,6 +63,11 @@ public class GetDeals extends GetListRequest<GetDealsResponse, Deal> {
 		return this;
 	}
 	
+	public GetDeals byCustomField(String key, Object value) {
+		customFields.put(key, value);
+		return this;
+	}
+	
 	public Map<String, Object> params() {
 		Map<String, Object> params = super.params();
 		if(ownerId > 0){
@@ -79,6 +87,11 @@ public class GetDeals extends GetListRequest<GetDealsResponse, Deal> {
 		}
 		if(productId > 0){
 			params.put("product_id", productId);
+		}
+		if(customFields.size() > 0) {
+			for(Entry<String, Object> entry : customFields.entrySet()) {
+				params.put("custom_fields." + entry.getKey(), entry.getValue());
+			}
 		}
 		return params;
 	}
